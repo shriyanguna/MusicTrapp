@@ -3,7 +3,11 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
   resources :home, only: [:index]
 
+  post 'users/login'
+
+
   resources :users do
+    post 'logout'
     resources :playlists
   end
   # You can have the root of your site routed with "root"

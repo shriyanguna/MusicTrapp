@@ -1,0 +1,22 @@
+<%= form_for(:user,  url: users_login_path, :html => {:id => "sign-in"}) do |f| %>
+  <div>
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, :placeholder => "Email" %>
+  </div>
+
+  <br>
+
+  <div>
+    <%= f.label :password %><br />
+    <%= f.password_field :password_hash, autocomplete: "off", :placeholder => "Password" %>
+  </div>
+
+ <br>
+
+  <div>
+    <%= f.submit "Log in" %>
+  </div>
+
+  <%= link_to "Need to sign up?" %>
+<% end %>
+
