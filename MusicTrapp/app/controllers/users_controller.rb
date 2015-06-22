@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
   def login
     @user = User.find_by(email: params["user"][:email])
-    if @user && @user.password_hash == params["user"][:password_hash]
+    if @user && @user.password == params["user"][:password_hash]
       signin(@user)
       redirect_to @user
     else
@@ -30,7 +30,7 @@ class UsersController < ApplicationController
 
 private
   def user_params
-      params.require(:user).permit(:first_name, :last_name, :email, :password_hash, :profile_pic)
+      params.require(:user).permit(:first_name, :last_name, :email, :password, :profile_pic)
   end
 
   def signin(user)
