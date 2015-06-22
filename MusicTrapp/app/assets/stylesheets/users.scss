@@ -4,6 +4,9 @@
 
 img.avatar {
   border-radius: 100px;
+  max-width: 100%;
+  height: auto;
+  width: auto\9;
 }
 
 div#overall-container {
@@ -16,17 +19,20 @@ div#user-container {
   width:100%;
   background-color: yellow;
   float: left;
+  height: auto;
+  position: relative;
 }
 
 div#avatar-container {
   background-color: red;
   float: left;
+  width: 15%;
 }
 
 div#headline-container {
   background-color: green;
   float: left;
-  margin: auto;
+  width: 85%;
 }
 
 div#inner-headline-container {

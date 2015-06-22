@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create(user_params)
+    @user = User.new(user_params)
     if @user.save
       signin(@user)
       redirect_to @user
@@ -25,6 +25,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @playlists = Playlist.where(user_id: @user.id)
+    @playlist = Playlist.new
   end
 
 
@@ -40,4 +42,6 @@ private
   def logout!
     session[:user_id] = nil
   end
+
+
 end

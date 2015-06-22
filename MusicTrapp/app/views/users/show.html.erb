@@ -13,6 +13,14 @@
 
 <div id= "playlists-container">
   <h3>Playlists</h3>
+  <ul>
+    <%@playlists.each do |playlist| %>
+    <li> <%=playlist.name %> </li>
+    <%end%>
 </div>
+
+<div id= "new-playlist-container">
+  <%= render "/playlists/new_playlist" %>
+ </div>
 
 </div>
