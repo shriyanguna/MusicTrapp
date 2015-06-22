@@ -1,2 +1,18 @@
-<%= image_tag(@user.avatar.url(:medium)) %>
-<%= "Welcome Back " + @user.first_name %>
+<div id="overall-container">
+
+<div id="user-container">
+  <div id="avatar-container">
+    <%= image_tag(@user.avatar.url(:medium), :class => "avatar") %>
+  </div>
+  <div id="headline-container">
+    <div id="inner-headline-container">
+      <h1><%= @user.first_name + " " + @user.last_name%></h1>
+    </div>
+  </div>
+</div>
+
+<div id= "playlists-container">
+  <h3>Playlists</h3>
+</div>
+
+</div>

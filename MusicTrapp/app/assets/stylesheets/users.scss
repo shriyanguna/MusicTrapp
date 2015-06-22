@@ -1,3 +1,45 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+img.avatar {
+  border-radius: 100px;
+}
+
+div#overall-container {
+  width:95%;
+  height:auto;
+  margin: auto;
+}
+
+div#user-container {
+  width:100%;
+  background-color: yellow;
+  float: left;
+}
+
+div#avatar-container {
+  background-color: red;
+  float: left;
+}
+
+div#headline-container {
+  background-color: green;
+  float: left;
+  margin: auto;
+}
+
+div#inner-headline-container {
+  background-color: blue;
+  font-size: 1em;
+  text-align: center;
+  margin: auto;
+  width: 90%;
+}
+
+div#playlists-container {
+  width:100%;
+  height:auto;
+  background-color: orange;
+  float: left;
+}
