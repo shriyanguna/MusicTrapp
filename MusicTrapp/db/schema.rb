@@ -46,9 +46,12 @@ ActiveRecord::Schema.define(version: 20150620234802) do
     t.string   "last_name"
     t.string   "email"
     t.string   "password_hash"
-    t.string   "profile_pic"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
   end
 
 end
