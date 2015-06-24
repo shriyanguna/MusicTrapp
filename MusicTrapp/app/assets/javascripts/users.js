@@ -14,12 +14,21 @@ var newPlaylist = function(event){
   var data = $('#new_playlist').serialize();
   var url = $('#new_playlist').attr('action')
 
+  $('#new-playlist-container').hide();
+  $('#search-container').show();
+
   $.ajax({
     method: 'post',
     url: url,
-    data: data
+    data: data,
+    dataType: 'json'
   }).done(function(response){
     console.log(response)
+    var source = $('#playlists-template').html();
+    var template = Handlebars.compile(source);
+
+    $('#playlists-list').append(template(response));
+
   })
 }
 
