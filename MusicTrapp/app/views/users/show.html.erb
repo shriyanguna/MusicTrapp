@@ -5,10 +5,17 @@
     <%= image_tag(@user.avatar.url(:medium), :class => "avatar") %>
   </div>
   <div id="headline-container">
-    <div id="inner-headline-container">
-      <h1><%= @user.first_name + " " + @user.last_name%></h1>
+    <div id= "new-playlist-container">
+      <%= render "/playlists/new_playlist" %>
     </div>
   </div>
+</div>
+
+<div id = "search-container">
+  <%= form_for(:track, :html => {:id => "search-form"}) do |f| %>
+  <%= f.text_field :title, :class => "large-textbox"%>
+  <%= f.submit "Search", :class => "large-textbox-submit" %>
+  <%end%>
 </div>
 
 <div id= "playlists-container">
@@ -19,8 +26,7 @@
     <%end%>
 </div>
 
-<div id= "new-playlist-container">
-  <%= render "/playlists/new_playlist" %>
- </div>
+
+
 
 </div>

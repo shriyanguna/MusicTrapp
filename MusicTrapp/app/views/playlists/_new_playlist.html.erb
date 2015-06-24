@@ -1,9 +1,7 @@
-<%= form_for [@user, @playlist], {:id => "new-playlist"} do |f| %>
 
-<div>
+<%= form_for [@user, @playlist], {:id => "new-playlist"} do |f| %>
 <%= f.hidden_field :user_id, :value => @user.id%>
-<%= f.text_field :name %>
-<%= f.submit "Create Playlist" %>
-</div>
+<%= f.text_field :name, :class => "large-textbox" %>
+<%= f.submit "Create Playlist", :class => "large-textbox-submit" %>
 
 <%end%>
