@@ -26,7 +26,6 @@ var newPlaylist = function(event){
     console.log(response)
     var source = $('#playlists-template').html();
     var template = Handlebars.compile(source);
-
     $('#playlists-list').append(template(response));
 
   })
@@ -45,6 +44,13 @@ var newSearch = function(event){
   request.done(function(response){
     console.log(response);
     artistId = response.artists.items[0].id
+
+    var source = $('#artist-stuff').html();
+    var template = Handlebars.compile(source);
+    var context = response.artists.items[0]
+    debugger
+    $('#search-results-container').append(template(context))
+
     albumSearch();
     })
 }
