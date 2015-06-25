@@ -48,7 +48,7 @@ var newSearch = function(event){
     var source = $('#artist-stuff').html();
     var template = Handlebars.compile(source);
     var context = response.artists.items[0]
-    debugger
+
     $('#search-results-container').append(template(context))
 
     albumSearch();
@@ -63,6 +63,11 @@ var albumSearch = function(){
     url: url
   }).done(function(response){
     console.log(response)
-    debugger
+
+    var source = $('#album-stuff').html();
+    var template = Handlebars.compile(source);
+    var context = {albums: response.items}
+        debugger
+    $('#search-results-container').append(template(context))
   })
 }
