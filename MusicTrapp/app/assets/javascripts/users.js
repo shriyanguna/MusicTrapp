@@ -32,7 +32,31 @@ var newPlaylist = function(event){
   })
 }
 
+var artistId = ""
 
 var newSearch = function(event){
   event.preventDefault();
+  var artist = $('#track_title').val().replace(/\s/g, "+");
+  var url = 'https://api.spotify.com/v1/search?q=' + artist + '&type=artist&limit=1'
+  var request = $.ajax({
+    method: 'get',
+    url: url
+  })
+  request.done(function(response){
+    console.log(response);
+    artistId = response.artists.items[0].id
+    albumSearch();
+    })
+}
+
+var albumSearch = function(){
+  var url = 'https://api.spotify.com/v1/artists/' + artistId + '/albums?album_type=album&market=US'
+
+  var request = $.ajax({
+    method: 'get',
+    url: url
+  }).done(function(response){
+    console.log(response)
+    debugger
+  })
 }
