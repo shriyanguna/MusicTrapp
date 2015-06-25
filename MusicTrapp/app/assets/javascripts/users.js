@@ -55,6 +55,8 @@ var newSearch = function(event){
     })
 }
 
+var albums = ""
+
 var albumSearch = function(){
   var url = 'https://api.spotify.com/v1/artists/' + artistId + '/albums?album_type=album&market=US'
 
@@ -67,7 +69,35 @@ var albumSearch = function(){
     var source = $('#album-stuff').html();
     var template = Handlebars.compile(source);
     var context = {albums: response.items}
-        debugger
+
+    albums = response.items
+
     $('#search-results-container').append(template(context))
+
+    tracksSearch();
   })
+}
+
+
+
+var tracksSearch = function(){
+
+  for(i=0; i < albums.length; i++){
+
+      var albumId = albums[i].id
+      albumDom = "#" + albumId
+      var url = 'https://api.spotify.com/v1/albums/' + albumId + '/tracks?market=US'
+
+      var request = $.ajax({
+        method: 'get',
+        url: url
+      }).done(function(response){
+        console.log(response)
+
+        var source = $('#tracks-stuff').html();
+        var template = Handlebars.compile(source);
+        var context = {tracks: response.items}
+        $(albumDom).append(template(context))
+    })
+  }
 }
