@@ -1,10 +1,15 @@
-<div id="overall-container">
+
 
 <div id="user-container">
+  <div>
+    <%if current_user%>
+      <%= link_to "logout", user_logout_path(@user), method: :post %>
+    <%end%>
+  </div>
   <div id="avatar-container">
     <%= image_tag(@user.avatar.url(:medium), :class => "avatar") %>
   </div>
-    <div id="headline-container">
+
       <div id= "new-playlist-container">
         <%= render "/playlists/new_playlist" %>
       </div>
@@ -15,8 +20,10 @@
         <%= f.submit "Search", :class => "large-textbox-submit" %>
         <%end%>
       </div>
-    </div>
+
 </div>
+
+<div id="overall-container">
 
 <div id= "search-results-container">
   <h3>Search Results</h3>
