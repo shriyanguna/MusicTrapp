@@ -1,8 +1,8 @@
 <script id="album-stuff" type="text/x-handlebars-template">
   {{#each albums}}
-  <div id = {{id}}>
+  <div id = {{id}} class="spotify-player">
         <h4>{{name}}</h4>
-        <img src= {{images.2.url}}>
+        <iframe src="https://embed.spotify.com/?uri=spotify:album:{{id}}" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
   </div>
   {{/each}}
 </script>

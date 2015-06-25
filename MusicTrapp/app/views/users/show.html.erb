@@ -10,9 +10,9 @@
     <%= image_tag(@user.avatar.url(:medium), :class => "avatar") %>
   </div>
 
-      <div id= "new-playlist-container">
+      <!-- <div id= "new-playlist-container">
         <%= render "/playlists/new_playlist" %>
-      </div>
+      </div> -->
 
       <div id = "search-container">
         <%= form_for(:track, :html => {:id => "search-form"}) do |f| %>
@@ -26,18 +26,17 @@
 <div id="overall-container">
 
 <div id= "search-results-container">
-  <h3>Search Results</h3>
     <%= render partial: '/playlists/artist_template' %>
     <%= render partial: '/playlists/album_template' %>
     <%= render partial: '/playlists/tracks_template' %>
 </div>
 
-<div id= "playlists-container">
+<!-- <div id= "playlists-container">
   <h3>Playlists</h3>
   <ul id="playlists-list">
       <%= render partial: '/playlists/index', collection: @playlists, as: :item %>
   </ul>
-</div>
+</div> -->
 
 
 

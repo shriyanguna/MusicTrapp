@@ -1,7 +1,11 @@
 <script id="artist-stuff" type="text/x-handlebars-template">
   <div id = {{id}}>
+    <div class = "artist-info">
     <h1> {{name}} </h1>
-    <img src= {{images.1.url}}>
+    <img src= {{images.1.url}} class="artist-photo">
+    </div>
+    <div id = "artist-{{id}}-albums" class="artist-albums">
+    </div>
   </div>
 </script>
 

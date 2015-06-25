@@ -27,3 +27,25 @@ div#search-results-container{
   height: auto;
   margin-top: 125px;
 }
+
+div.artist-info{
+  background-color: orange;
+  width: 40%;
+  float: left;
+}
+
+img.artist-photo{
+  width:100%;
+}
+
+div.artist-albums{
+  float: left;
+  background-color: blue;
+}
+
+div.spotify-player{
+  background-color: red;
+  width: auto;
+  float: left;
+  margin: 15px;
+}

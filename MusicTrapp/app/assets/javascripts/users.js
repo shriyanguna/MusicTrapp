@@ -1,35 +1,35 @@
 $(document).ready(function(){
     eventBindings();
-    $('#search-container').hide();
+    // $('#search-container').hide();
 })
 
 var eventBindings = function(){
-  $('#new_playlist').on('submit', newPlaylist)
+  // $('#new_playlist').on('submit', newPlaylist)
   $('#search-form').on('submit', newSearch)
 }
 
-var newPlaylist = function(event){
-  event.preventDefault();
+// var newPlaylist = function(event){
+//   event.preventDefault();
 
-  var data = $('#new_playlist').serialize();
-  var url = $('#new_playlist').attr('action')
+//   var data = $('#new_playlist').serialize();
+//   var url = $('#new_playlist').attr('action')
 
-  $('#new-playlist-container').hide();
-  $('#search-container').show();
+//   $('#new-playlist-container').hide();
+//   $('#search-container').show();
 
-  $.ajax({
-    method: 'post',
-    url: url,
-    data: data,
-    dataType: 'json'
-  }).done(function(response){
-    console.log(response)
-    var source = $('#playlists-template').html();
-    var template = Handlebars.compile(source);
-    $('#playlists-list').append(template(response));
+//   $.ajax({
+//     method: 'post',
+//     url: url,
+//     data: data,
+//     dataType: 'json'
+//   }).done(function(response){
+//     console.log(response)
+//     var source = $('#playlists-template').html();
+//     var template = Handlebars.compile(source);
+//     $('#playlists-list').append(template(response));
 
-  })
-}
+//   })
+// }
 
 var artistId = ""
 
@@ -49,7 +49,7 @@ var newSearch = function(event){
     var template = Handlebars.compile(source);
     var context = response.artists.items[0]
 
-    $('#search-results-container').append(template(context))
+    $('#search-results-container').prepend(template(context))
 
     albumSearch();
     })
@@ -71,33 +71,33 @@ var albumSearch = function(){
     var context = {albums: response.items}
 
     albums = response.items
-
-    $('#search-results-container').append(template(context))
-
-    tracksSearch();
+    artistAlbumsDom = "#artist-" + artistId +"-albums"
+    $(artistAlbumsDom).append(template(context))
+    debugger
+    // tracksSearch();
   })
 }
 
 
 
-var tracksSearch = function(){
+// var tracksSearch = function(){
 
-  for(i=0; i < albums.length; i++){
+//   for(i=0; i < albums.length; i++){
 
-      var albumId = albums[i].id
-      albumDom = "#" + albumId
-      var url = 'https://api.spotify.com/v1/albums/' + albumId + '/tracks?market=US'
+//       var albumId = albums[i].id
+//       albumDom = "#" + albumId
+//       var url = 'https://api.spotify.com/v1/albums/' + albumId + '/tracks?market=US'
 
-      var request = $.ajax({
-        method: 'get',
-        url: url
-      }).done(function(response){
-        console.log(response)
+//       var request = $.ajax({
+//         method: 'get',
+//         url: url
+//       }).done(function(response){
+//         console.log(response)
 
-        var source = $('#tracks-stuff').html();
-        var template = Handlebars.compile(source);
-        var context = {tracks: response.items}
-        $(albumDom).append(template(context))
-    })
-  }
-}
+//         var source = $('#tracks-stuff').html();
+//         var template = Handlebars.compile(source);
+//         var context = {tracks: response.items}
+//         $(albumDom).append(template(context))
+//     })
+//   }
+// }
