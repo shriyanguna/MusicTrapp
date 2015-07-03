@@ -2,6 +2,7 @@
 
   <h4> Related Artists </h4>
   {{#each artists}}
-    <img src= {{images.1.url}} class="related-artist-avatar">
+
+    <img src= {{images.1.url}} title= "{{name}}" data-artist-id= {{id}} class="related-artist-avatar">
   {{/each}}
 </script>
