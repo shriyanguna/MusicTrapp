@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+body{
+  background-image: url("symphony.png");
+}
+
 div#overall-container {
   width:95%;
   height:auto;
@@ -9,15 +13,17 @@ div#overall-container {
 }
 
 div#head-wrapper{
-  height:125px;
+  height:80px;
   position: fixed;
   width: 95%;
   margin: 0px auto;
+  background-color: #fd7214;
+  margin-top: -10px;
 }
 
 img.avatar {
   border-radius: 100px;
-  width: 92px;
+  width: 65px;
   margin: 5px;
   position: relative;
 }
@@ -25,32 +31,38 @@ img.avatar {
 
 div#user-container {
   width:100%;
-  background-color: yellow;
-  margin-top: -10px;
   height: 100%;
 }
 
 div#avatar-container {
   width: auto;
-  background-color: red;
+  background-color: green;
   float: left;
   height: 90%;
   position: relative;
 }
 
+div#logo-container {
+  width: 8%;
+  background-color: green;
+  float: left;
+  height: 90%;
+  position: relative;
+  padding: 0px 10px;
+}
 
 div#search-container{
   background-color: green;
   float: left;
-  width: 92%;
+  width: 80%;
   height: 90%;
   position: relative;
 }
 
 
 form#search-form{
-  margin-left: 25%;
-  margin-top: 25px;
+  margin-left: 30%;
+  margin-top: 10px;
   position: relative;
 }
 
@@ -64,11 +76,6 @@ form#search-form .large-textbox-submit{
  font-size: 36px;
 }
 
-div#playlists-container {
-  width:100%;
-  height:auto;
-  background-color: orange;
-  float: left;
-}
+
 
 

@@ -2,15 +2,10 @@
 
   <div id="head-wrapper">
     <div id="user-container">
-      <div>
-        <%if current_user%>
-          <%= link_to "logout", user_logout_path(@user), method: :post %>
-        <%end%>
-      </div>
-      <div id="avatar-container">
-        <%= image_tag(@user.avatar.url(:medium), :class => "avatar") %>
-      </div>
 
+      <div id="logo-container">
+        <h3>Spoti-Search</h3>
+      </div>
 
       <div id = "search-container">
             <%= form_for(:track, :html => {:id => "search-form"}) do |f| %>
@@ -18,6 +13,15 @@
             <%= f.submit "Search", :class => "large-textbox-submit" %>
             <%end%>
       </div>
+
+      <div id="avatar-container">
+        <%= image_tag(@user.avatar.url(:medium), :class => "avatar") %>
+         <%if current_user%>
+            <%= link_to "logout", user_logout_path(@user), method: :post %>
+          <%end%>
+      </div>
+
+
     </div>
   </div>
 

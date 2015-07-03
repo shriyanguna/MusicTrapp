@@ -10,15 +10,15 @@
 
 
 div#search-results-container{
-  background-color: pink;
+
   float: left;
   width: 100%;
   height: auto;
-  margin-top: 125px;
+  margin-top: 100px;
 }
 
 div.artist-info{
-  background-color: orange;
+  background-color: #fd7214;
   width: 30%;
   float: left;
 }
@@ -29,14 +29,14 @@ img.artist-photo{
 
 div.artist-albums{
   float: left;
-  background-color: blue;
   width: 70%;
+
 }
 
 div.spotify-player{
-  background-color: red;
   width: auto;
   float: left;
+  background-color: red;
 }
 
 img.related-artist-avatar {
