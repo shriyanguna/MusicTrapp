@@ -49,9 +49,12 @@ var newSearch = function(event){
     var template = Handlebars.compile(source);
     var context = response.artists.items[0]
 
-    $('#search-results-container').prepend(template(context))
+
+
+    $('#media-wrapper').prepend(template(context))
 
     albumSearch();
+    relatedArtists();
     })
 }
 
@@ -68,16 +71,51 @@ var albumSearch = function(){
 
     var source = $('#album-stuff').html();
     var template = Handlebars.compile(source);
+
+
+    var uniqueAlbums = {};
+    var albums = response.items
+
+    for(var i=0; i < albums.length; i++){
+        var title = albums[i].name;
+        uniqueAlbums[title] = albums[i];
+    }
+
+
     var context = {albums: response.items}
 
-    albums = response.items
+
+
     artistAlbumsDom = "#artist-" + artistId +"-albums"
+
+
     $(artistAlbumsDom).append(template(context))
-    debugger
+
+
     // tracksSearch();
   })
 }
 
+var relatedArtists = function(){
+  var url = 'https://api.spotify.com/v1/artists/' + artistId + '/related-artists'
+
+  var request = $.ajax({
+    method: 'get',
+    url: url,
+    dataType: 'json'
+  }).done(function(response){
+    console.log(response);
+
+    var topResults = response.artists.slice(0,9)
+
+    var source = $('#related-artists').html();
+    var template = Handlebars.compile(source);
+    var context = {artists: topResults};
+
+    $(".artist-info").append(template(context))
+  })
+
+}
 
 
 // var tracksSearch = function(){

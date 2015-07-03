@@ -2,41 +2,66 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+div#overall-container {
+  width:95%;
+  height:auto;
+  margin: 0px auto;
+}
+
+div#head-wrapper{
+  height:125px;
+  position: fixed;
+  width: 95%;
+  margin: 0px auto;
+}
+
 img.avatar {
   border-radius: 100px;
-  height: 95px;
-  margin: auto;
+  width: 92px;
+  margin: 5px;
+  position: relative;
 }
 
 
 div#user-container {
-  width:95%;
+  width:100%;
   background-color: yellow;
-  margin-left: 2.5%;
   margin-top: -10px;
-  height: auto;
-  position: fixed;
+  height: 100%;
 }
 
 div#avatar-container {
+  width: auto;
   background-color: red;
   float: left;
-  height: 100px;
-  width: 100px;
+  height: 90%;
+  position: relative;
 }
 
-div#new-playlist-container{
-  background-color: blue;
-  float: left;
-  width: 90%;
-  height: 100px;
-}
 
 div#search-container{
   background-color: green;
   float: left;
-  width: 90%;
-  height: 100px;
+  width: 92%;
+  height: 90%;
+  position: relative;
+}
+
+
+form#search-form{
+  margin-left: 25%;
+  margin-top: 25px;
+  position: relative;
+}
+
+form#search-form input.large-textbox{
+  height: 50px;
+  width: 50%;
+  font-size: 24px;
+}
+
+form#search-form .large-textbox-submit{
+ font-size: 36px;
 }
 
 div#playlists-container {
@@ -46,8 +71,4 @@ div#playlists-container {
   float: left;
 }
 
-div#overall-container {
-  width:95%;
-  height:auto;
-  margin-left: 2.5%;
-}
+

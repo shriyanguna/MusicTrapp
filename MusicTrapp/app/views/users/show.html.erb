@@ -1,42 +1,37 @@
-
-
-<div id="user-container">
-  <div>
-    <%if current_user%>
-      <%= link_to "logout", user_logout_path(@user), method: :post %>
-    <%end%>
-  </div>
-  <div id="avatar-container">
-    <%= image_tag(@user.avatar.url(:medium), :class => "avatar") %>
-  </div>
-
-      <!-- <div id= "new-playlist-container">
-        <%= render "/playlists/new_playlist" %>
-      </div> -->
-
-      <div id = "search-container">
-        <%= form_for(:track, :html => {:id => "search-form"}) do |f| %>
-        <%= f.text_field :title, :class => "large-textbox"%>
-        <%= f.submit "Search", :class => "large-textbox-submit" %>
-        <%end%>
-      </div>
-
-</div>
-
 <div id="overall-container">
 
-<div id= "search-results-container">
-    <%= render partial: '/playlists/artist_template' %>
-    <%= render partial: '/playlists/album_template' %>
-    <%= render partial: '/playlists/tracks_template' %>
-</div>
+  <div id="head-wrapper">
+    <div id="user-container">
+      <div>
+        <%if current_user%>
+          <%= link_to "logout", user_logout_path(@user), method: :post %>
+        <%end%>
+      </div>
+      <div id="avatar-container">
+        <%= image_tag(@user.avatar.url(:medium), :class => "avatar") %>
+      </div>
 
-<!-- <div id= "playlists-container">
-  <h3>Playlists</h3>
-  <ul id="playlists-list">
-      <%= render partial: '/playlists/index', collection: @playlists, as: :item %>
-  </ul>
-</div> -->
+
+      <div id = "search-container">
+            <%= form_for(:track, :html => {:id => "search-form"}) do |f| %>
+            <%= f.text_field :title, :class => "large-textbox"%>
+            <%= f.submit "Search", :class => "large-textbox-submit" %>
+            <%end%>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div id= "search-results-container">
+    <div id="media-wrapper">
+      <%= render partial: '/playlists/artist_template' %>
+      <%= render partial: '/playlists/related_artists_template' %>
+    </div>
+      <%= render partial: '/playlists/album_template' %>
+
+  </div>
+
 
 
 

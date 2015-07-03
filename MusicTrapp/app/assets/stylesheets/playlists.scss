@@ -4,19 +4,8 @@
 
 
 
-form#new_playlist{
-  margin: 20px;
-}
 
-input.large-textbox{
-  height: 50px;
-  width: 50%;
-  font-size: 24px;
-}
 
-input[type=submit].large-textbox-submit{
- height: 50px;
-}
 
 
 
@@ -48,4 +37,9 @@ div.spotify-player{
   background-color: red;
   width: auto;
   float: left;
+}
+
+img.related-artist-avatar {
+  height: 100px;
+  width: 100px;
 }
