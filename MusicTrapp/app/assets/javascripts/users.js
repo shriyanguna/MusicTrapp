@@ -84,7 +84,7 @@ var albumSearch = function(){
     var uniques = [];
 
     for(var i=0; i < albums.length; i++){
-        var title = albums[i].name;
+        var title = albums[i].name.split(" (")[0];
         if(!uniqueAlbums[title]){
         uniqueAlbums[title] = albums[i];
         uniques.push(uniqueAlbums[title])
