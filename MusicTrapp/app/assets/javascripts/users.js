@@ -67,7 +67,7 @@ var clickSearch = function(event){
 var albums = ""
 
 var albumSearch = function(){
-  var url = 'https://api.spotify.com/v1/artists/' + artistId + '/albums?album_type=album&market=US'
+  var url = 'https://api.spotify.com/v1/artists/' + artistId + '/albums?album_type=album&market=GB'
 
   var request = $.ajax({
     method: 'get',
@@ -92,7 +92,7 @@ var albumSearch = function(){
 
     }
 
-    debugger
+
 
 
 
@@ -101,10 +101,12 @@ var albumSearch = function(){
 
 
     artistAlbumsDom = "#artist-" + artistId +"-albums"
+    artistDivId = "#" +artistId
 
+    $(artistAlbumsDom).append(template(context));
 
-    $(artistAlbumsDom).append(template(context))
-
+    artistDomHeight = $(artistAlbumsDom).height()
+    $(artistDivId).height(artistDomHeight);
 
     // tracksSearch();
   })

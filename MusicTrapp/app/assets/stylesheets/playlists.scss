@@ -17,9 +17,14 @@ div#search-results-container{
   margin-top: 100px;
 }
 
+div.artist-div{
+  margin-bottom: 40px;
+}
+
 div.artist-info{
   background-color: #fd7214;
   width: 30%;
+  height: 100%;
   float: left;
 }
 
@@ -29,8 +34,8 @@ img.artist-photo{
 
 div.artist-albums{
   float: left;
+  height: 100%;
   width: 70%;
-
 }
 
 div.spotify-player{
@@ -42,4 +47,9 @@ div.spotify-player{
 img.related-artist-avatar {
   height: 100px;
   width: 100px;
+}
+
+div.related-artists-box {
+  background-color: blue;
+  text-align: center;
 }
