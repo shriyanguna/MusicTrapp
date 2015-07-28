@@ -19,6 +19,7 @@ div#search-results-container{
 
 div.artist-div{
   margin-bottom: 40px;
+  clear: both;
 }
 
 div.artist-info{
@@ -50,6 +51,6 @@ img.related-artist-avatar {
 }
 
 div.related-artists-box {
-  background-color: blue;
   text-align: center;
+  margin-bottom: 40px;
 }

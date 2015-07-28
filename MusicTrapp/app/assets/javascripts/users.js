@@ -102,12 +102,14 @@ var albumSearch = function(){
 
     artistAlbumsDom = "#artist-" + artistId +"-albums"
     artistDivId = "#" +artistId
+    artistInfoDiv = "#artist-info-" + artistId
 
     $(artistAlbumsDom).append(template(context));
 
     artistDomHeight = $(artistAlbumsDom).height()
-    $(artistDivId).height(artistDomHeight);
 
+    $(artistDivId).height(artistDomHeight);
+    $(artistInfoDiv).height("auto");
     // tracksSearch();
   })
 }
