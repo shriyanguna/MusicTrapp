@@ -123,17 +123,22 @@ var relatedArtists = function(){
     $(artistInfoDom).append(template(context));
 
     artistDivId = "#" +artistId
-    $(artistInfoDom).height("auto");
+    // $(artistInfoDom).height("auto");
+
+    artistAlbumsDom = "#artist-" + artistId +"-albums";
 
     artistAlbumsHeight = $(artistAlbumsDom).height()
     artistInfoHeight = $(artistInfoDom).height()
 
+    debugger
+
     if(artistAlbumsHeight > artistInfoHeight){
       $(artistDivId).height(artistAlbumsHeight);
     } else {
-    $(artistDivId).height(artistInfoHeight);
+      debugger
+     $(artistDivId).height(artistInfoHeight);
     }
-    debugger
+
   })
 
 }
