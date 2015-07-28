@@ -1,4 +1,4 @@
-<div id="overall-container">
+
 
   <div id="head-wrapper">
     <div id="user-container">
@@ -9,7 +9,7 @@
 
       <div id = "search-container">
             <%= form_for(:track, :html => {:id => "search-form"}) do |f| %>
-            <%= f.text_field :title, :class => "large-textbox", :value => "Artist Name"%>
+            <%= f.text_field :title, :class => "large-textbox", :placeholder => "Artist Name"%>
             <%= f.submit "Search", :class => "large-textbox-submit" %>
             <%end%>
       </div>
@@ -25,7 +25,7 @@
     </div>
   </div>
 
-
+<div id="overall-container">
 
   <div id= "search-results-container">
     <div id="media-wrapper">

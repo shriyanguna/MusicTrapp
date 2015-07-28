@@ -131,12 +131,11 @@ var relatedArtists = function(){
     artistAlbumsHeight = $(artistAlbumsDom).height()
     artistInfoHeight = $(artistInfoDom).height()
 
-    debugger
+
 
     if(artistAlbumsHeight > artistInfoHeight){
       $(artistDivId).height(artistAlbumsHeight);
     } else {
-      debugger
      $(artistDivId).height(artistInfoHeight);
     }
 

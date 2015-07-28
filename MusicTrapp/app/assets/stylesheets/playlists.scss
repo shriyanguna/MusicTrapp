@@ -36,13 +36,15 @@ img.artist-photo{
 div.artist-albums{
   float: left;
   height: 100%;
-  width: 70%;
+  width: 69%;
+  margin-left: 10px;
 }
 
 div.spotify-player{
   width: auto;
   float: left;
-  background-color: red;
+  border: solid black 1px;
+  margin: 0px 2px 2px 0px;
 }
 
 img.related-artist-avatar {
