@@ -59,8 +59,9 @@ var clickSearch = function(event){
 
     $('#media-wrapper').prepend(template(context))
 
-    relatedArtists();
+
     albumSearch();
+    relatedArtists();
 
     })
 }

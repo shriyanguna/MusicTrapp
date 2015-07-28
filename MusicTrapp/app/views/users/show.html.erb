@@ -9,7 +9,7 @@
 
       <div id = "search-container">
             <%= form_for(:track, :html => {:id => "search-form"}) do |f| %>
-            <%= f.text_field :title, :class => "large-textbox"%>
+            <%= f.text_field :title, :class => "large-textbox", :value => "Artist Name"%>
             <%= f.submit "Search", :class => "large-textbox-submit" %>
             <%end%>
       </div>
