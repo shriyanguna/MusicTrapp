@@ -59,8 +59,9 @@ var clickSearch = function(event){
 
     $('#media-wrapper').prepend(template(context))
 
-    albumSearch();
     relatedArtists();
+    albumSearch();
+
     })
 }
 
@@ -92,25 +93,12 @@ var albumSearch = function(){
 
     }
 
-
-
-
-
     var context = {albums: uniques}
 
-
-
     artistAlbumsDom = "#artist-" + artistId +"-albums"
-    artistDivId = "#" +artistId
-    artistInfoDiv = "#artist-info-" + artistId
-
     $(artistAlbumsDom).append(template(context));
 
-    artistDomHeight = $(artistAlbumsDom).height()
 
-    $(artistDivId).height(artistDomHeight);
-    $(artistInfoDiv).height("auto");
-    // tracksSearch();
   })
 }
 
@@ -134,6 +122,18 @@ var relatedArtists = function(){
 
     $(artistInfoDom).append(template(context));
 
+    artistDivId = "#" +artistId
+    $(artistInfoDom).height("auto");
+
+    artistAlbumsHeight = $(artistAlbumsDom).height()
+    artistInfoHeight = $(artistInfoDom).height()
+
+    if(artistAlbumsHeight > artistInfoHeight){
+      $(artistDivId).height(artistAlbumsHeight);
+    } else {
+    $(artistDivId).height(artistInfoHeight);
+    }
+    debugger
   })
 
 }
