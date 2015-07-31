@@ -1,14 +1,31 @@
 $(document).ready(function(){
     eventBindings();
-    // $('#search-container').hide();
+    profInfo();
 })
 
+var params = getHashParams();
+var access_token = params.access_token
+
 var eventBindings = function(){
-  // $('#new_playlist').on('submit', newPlaylist)
   $('#search-form').on('submit', newSearch);
   $('#search-results-container').on('click', '.related-artist-avatar', clickSearch);
 
 }
+
+var profInfo = function(){
+  var url = 'https://api.spotify.com/v1/me'
+
+  var request = $.ajax({
+      method: 'get',
+      url: url,
+      headers: {
+                  'Authorization': 'Bearer ' + access_token
+                }
+    }).done(function(response){
+      console.log(response);
+    })
+}
+
 
 
 var artistId = ""
@@ -142,5 +159,15 @@ var relatedArtists = function(){
   })
 
 }
+
+function getHashParams() {
+          var hashParams = {};
+          var e, r = /([^&;=]+)=?([^&;]*)/g,
+              q = window.location.hash.substring(1);
+          while ( e = r.exec(q)) {
+             hashParams[e[1]] = decodeURIComponent(e[2]);
+          }
+          return hashParams;
+        }
 
 
