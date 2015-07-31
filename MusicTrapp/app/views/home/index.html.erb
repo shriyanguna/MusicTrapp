@@ -1,8 +1,7 @@
   <div id="head-wrapper">
     <div id="user-container">
-
       <div id="logo-container">
-        <h3>Spoti-Search</h3>
+        <h2 class="heading" id="logo">Spoti-Search</h2>
       </div>
 
       <div id = "search-container">
@@ -12,13 +11,7 @@
             <%end%>
       </div>
 
-      <div id="avatar-container">
-        <%= image_tag(@user.avatar.url(:medium), :class => "avatar") %>
-         <%if current_user%>
-            <%= link_to "logout", user_logout_path(@user), method: :post %>
-          <%end%>
-      </div>
-
+      <%= render partial: '/users/header_template' %>
 
     </div>
   </div>

@@ -24,8 +24,10 @@ div#head-wrapper{
 img.avatar {
   border-radius: 100px;
   width: 65px;
-  margin: 5px;
-  position: relative;
+  display: block;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 
@@ -35,44 +37,56 @@ div#user-container {
 }
 
 div#avatar-container {
-  width: auto;
+  width: 15%;
   float: left;
   height: 90%;
   position: relative;
 }
 
 div#logo-container {
-  width: 8%;
+  width: 25%;
   float: left;
   height: 90%;
-  position: relative;
-  padding: 0px 10px;
+  text-align: center;
 }
 
 div#search-container{
   float: left;
-  width: 80%;
+  width: 50%;
   height: 90%;
   position: relative;
+  margin-right: 10%;
 }
 
 
 form#search-form{
-  margin-left: 30%;
   margin-top: 10px;
   position: relative;
 }
 
-form#search-form input.large-textbox{
+.large-textbox{
   height: 50px;
-  width: 50%;
   font-size: 24px;
+  width: 85%;
 }
 
-form#search-form .large-textbox-submit{
- font-size: 36px;
+.large-textbox-submit{
+ font-size: 20px;
+ display: inline;
+ margin-top: 15px;
+ background-color: #fd7214;
+ border-radius: 25px;
+ color: white;
 }
 
+.heading{
+  font-family: 'Bevan', cursive;
+}
+
+
+h1#artist-name{
+  margin-left: 5px;
+}
 
 
 

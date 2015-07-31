@@ -1,6 +1,7 @@
 $(document).ready(function(){
-    eventBindings();
     profInfo();
+    eventBindings();
+
 })
 
 var params = getHashParams();
@@ -23,7 +24,16 @@ var profInfo = function(){
                 }
     }).done(function(response){
       console.log(response);
-    })
+
+    var source = $('#header-temp').html();
+    var template = Handlebars.compile(source);
+
+    $('#user-container').append(template(response))
+
+    }).fail(function(){
+      console.log("Fail");
+      })
+
 }
 
 
