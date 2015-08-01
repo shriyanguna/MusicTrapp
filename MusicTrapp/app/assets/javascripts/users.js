@@ -6,6 +6,7 @@ $(document).ready(function(){
 
 var params = getHashParams();
 var access_token = params.access_token
+var market = ""
 
 var eventBindings = function(){
   $('#search-form').on('submit', newSearch);
@@ -24,11 +25,7 @@ var profInfo = function(){
                 }
     }).done(function(response){
       console.log(response);
-
-    var source = $('#header-temp').html();
-    var template = Handlebars.compile(source);
-
-    $('#user-container').append(template(response))
+      market = response.country
 
     }).fail(function(){
       console.log("Fail");
@@ -96,7 +93,7 @@ var clickSearch = function(event){
 var albums = ""
 
 var albumSearch = function(){
-  var url = 'https://api.spotify.com/v1/artists/' + artistId + '/albums?album_type=album&market=GB'
+  var url = 'https://api.spotify.com/v1/artists/' + artistId + '/albums?album_type=album&market=' + market
 
   var request = $.ajax({
     method: 'get',
