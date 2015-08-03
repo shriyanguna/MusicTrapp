@@ -1,3 +1,4 @@
+
 $(document).ready(function(){
     profInfo();
     eventBindings();
@@ -39,6 +40,7 @@ var artistId = ""
 
 var newSearch = function(event){
   event.preventDefault();
+
   var artist = $('#track_title').val().replace(/\s/g, "+");
   var url = 'https://api.spotify.com/v1/search?q=' + artist + '&type=artist&limit=1'
   var request = $.ajax({
@@ -47,19 +49,24 @@ var newSearch = function(event){
   })
   request.done(function(response){
     console.log(response);
-    artistId = response.artists.items[0].id
+      if(response.artists.items.length > 0){
+          artistId = response.artists.items[0].id
 
-    var source = $('#artist-stuff').html();
-    var template = Handlebars.compile(source);
-    var context = response.artists.items[0]
+          var source = $('#artist-stuff').html();
+          var template = Handlebars.compile(source);
+          var context = response.artists.items[0]
+
+          $('#media-wrapper').prepend(template(context))
+
+          albumSearch();
+          relatedArtists();
+      }else{
 
 
-
-    $('#media-wrapper').prepend(template(context))
-
-    albumSearch();
-    relatedArtists();
+      }
     })
+
+
 }
 
 var clickSearch = function(event){
