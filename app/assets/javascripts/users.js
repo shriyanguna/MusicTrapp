@@ -12,7 +12,6 @@ var market = ""
 var eventBindings = function(){
   $('#search-form').on('submit', newSearch);
   $('#search-results-container').on('click', '.related-artist-avatar', clickSearch);
-
 }
 
 var profInfo = function(){
