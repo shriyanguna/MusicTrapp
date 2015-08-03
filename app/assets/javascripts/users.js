@@ -130,7 +130,7 @@ var relatedArtists = function(){
   }).done(function(response){
     console.log(response);
 
-    var topResults = response.artists.slice(0,9)
+    var topResults = response.artists.slice(0,8)
 
     var source = $('#related-artists').html();
     var template = Handlebars.compile(source);
