@@ -25,7 +25,6 @@ var profInfo = function(){
                   'Authorization': 'Bearer ' + access_token
                 }
     }).done(function(response){
-      console.log(response);
       market = response.country
 
     }).fail(function(){
@@ -48,7 +47,6 @@ var newSearch = function(event){
     url: url
   })
   request.done(function(response){
-    console.log(response);
       if(response.artists.items.length > 0){
           artistId = response.artists.items[0].id
 
@@ -60,10 +58,8 @@ var newSearch = function(event){
 
           albumSearch();
           relatedArtists();
-      }else{
-
-
       }
+
     })
 
 
@@ -79,17 +75,13 @@ var clickSearch = function(event){
     url: url
   })
   request.done(function(response){
-    console.log(response);
     artistId = response.artists.items[0].id
 
     var source = $('#artist-stuff').html();
     var template = Handlebars.compile(source);
     var context = response.artists.items[0]
 
-
-
     $('#media-wrapper').prepend(template(context))
-
 
     albumSearch();
     relatedArtists();
@@ -106,11 +98,9 @@ var albumSearch = function(){
     method: 'get',
     url: url
   }).done(function(response){
-    console.log(response)
 
     var source = $('#album-stuff').html();
     var template = Handlebars.compile(source);
-
 
     var uniqueAlbums = {};
     var albums = response.items;
@@ -122,14 +112,11 @@ var albumSearch = function(){
         uniqueAlbums[title] = albums[i];
         uniques.push(uniqueAlbums[title])
       }
-
     }
 
     var context = {albums: uniques}
-
     artistAlbumsDom = "#artist-" + artistId +"-albums"
     $(artistAlbumsDom).append(template(context));
-
 
   })
 }
