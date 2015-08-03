@@ -53,7 +53,7 @@
 
           document.getElementById('login-button').addEventListener('click', function() {
             var client_id = '9f2e9952d5a649bf846c1f2963f60fc0'; // Your client id
-            var redirect_uri = 'http://spoti-search.herokuapp.com/home/'; // Your redirect uri
+            var redirect_uri = 'http://spoti-search.herokuapp.com/home'; // Your redirect uri
             var state = generateRandomString(16);
             localStorage.setItem(stateKey, state);
             var scope = 'user-read-private user-read-email';
